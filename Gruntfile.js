@@ -62,6 +62,13 @@ module.exports = function (grunt) {
           '<%= config.app %>/manifest.json',
           '<%= config.app %>/_locales/{,*/}*.json'
         ]
+      },
+      sass: {
+        files: ['<%= config.app %>/styles/scss{,*/}*.scss'],
+        tasks: ['sass'],
+        options: {
+          livereload: '<%= connect.options.livereload %>'
+        }
       }
     },
 
@@ -311,7 +318,17 @@ module.exports = function (grunt) {
           dest: ''
         }]
       }
-    }
+    },
+
+    // compile sass files
+    sass: {
+        dist: {
+          files: {
+            '<%= config.app %>/styles/main.css': '<%= config.app %>/styles/scss/main.scss'
+          }
+        }
+      }
+
   });
 
   grunt.registerTask('debug', function () {

@@ -10,8 +10,8 @@
   "default_locale": "en",
   "background": {
     "scripts": [
-      "scripts/chromereload.js",
-      "scripts/background.js"
+      "scripts.babel/chromereload.js",
+      "scripts.babel/background.js"
     ]
   },
   "browser_action": {

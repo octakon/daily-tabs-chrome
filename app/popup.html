@@ -9,17 +9,62 @@
     <!-- build:css styles/main.css -->
     <link href="styles/main.css" rel="stylesheet">
     <!-- endbuild -->
+    <link href="bower_components/foundation/css/foundation.min.css" rel="stylesheet">
+    <link href="bower_components/foundation/css/normalize.min.css" rel="stylesheet">
+
   </head>
   <body>
-    <h1>'Allo, 'Allo!</h1>
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="row">
+
+
+
+              <div class="large-8 columns">
+                <div class="panel radius">
+
+                <div class="row">
+                <div class="large-6 small-6 columns">
+
+                  <h1>Test Extension</h1><hr/>
+                  <h5 class="subheader">
+                    Current Tab title: <span id="currentTab"></span>
+                  </h5>
+
+                <div class="show-for-small" align="center">
+                  <a href="#" id="alert-current-tab" class="small radius button">Call To Action!</a><br>
+
+                  <a href="#" class="small radius button">Call To Action!</a>
+                </div>
+
+                </div>
+                <div class="large-6 small-6 columns">
+
+                  <p>Suspendisse ultrices ornare tempor. Aenean eget ultricies libero. Phasellus non ipsum eros. Vivamus at dignissim massa. Aenean dolor libero, blandit quis interdum et, malesuada nec ligula. Nullam erat erat, eleifend sed pulvinar ac. Suspendisse ultrices ornare tempor. Aenean eget ultricies libero.
+                </p>
+              </div>
+
+              </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
+    <script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
+    <script src="bower_components/foundation/js/foundation.js"></script>
+    <script src="bower_components/requirejs/require.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
     <!-- build:js scripts/popup.js -->
-    <script src="scripts/popup.js"></script>
+    <script src="scripts.babel/popup.js"></script>
     <!-- endbuild -->
+
   </body>
 </html>
