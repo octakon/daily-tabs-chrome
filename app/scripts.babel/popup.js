@@ -1,6 +1,10 @@
 'use strict';
-
-console.log('\'Allo \'Allo! Popup');
+var sites = {};
+if(typeof window.localStorage.allDays === 'undefined') {
+  sites.allDays = [];
+} else {
+  sites.allDays = JSON.parse(window.localStorage.allDays);
+}
 chrome.tabs.query(
   {
     active: true,
@@ -16,10 +20,11 @@ requirejs.config({
 
 requirejs(['utils/tabs'], function(tabs) {
 
-  $('#alert-current-tab').on('click.alert', function(evt) {
+  $('#save-current-tab').on('click.sct', function() {
     tabs.getCurrentTab(function(tab) {
-      $('#currentTab').html(tab.url);
-      alert(tab.url);
+      sites.allDays.push(tab.url);
+      window.localStorage.allDays = JSON.stringify(sites.allDays);
+      window.alert(JSON.stringify(sites));
     });
   });
 

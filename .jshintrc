@@ -19,6 +19,9 @@
   "strict": true,
   "globals" : {
     "chrome": true,
-    "crypto": true
+    "crypto": true,
+    "$": false,
+    "requirejs": false,
+    "define": false
   }
 }

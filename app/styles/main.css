@@ -1,5 +1,6 @@
-body,
-html {
-  width: 600px; }
+.smart-news-brunch {
+  background-color: #343434;
+  min-width: 400px;
+  padding: 10px; }
 
 /*# sourceMappingURL=main.css.map */
