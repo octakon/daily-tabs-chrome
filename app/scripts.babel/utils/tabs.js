@@ -8,8 +8,21 @@ define(function() {
         windowId: windowID,
       },
       function (result) {
-        // console.log(tabs[0]);
         callback(result[0]);
+      });
+    },
+    getAllTabs: function(callback) {
+      chrome.tabs.query({
+        windowId: windowID,
+      },
+      function (result) {
+        callback(result);
+      });
+    },
+    createTab: function(url) {
+      chrome.tabs.create({
+        windowId: windowID,
+        url: url
       });
     }
   };

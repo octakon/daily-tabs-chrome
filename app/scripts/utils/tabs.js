@@ -9,8 +9,20 @@ define(function () {
         active: true,
         windowId: windowID
       }, function (result) {
-        // console.log(tabs[0]);
         callback(result[0]);
+      });
+    },
+    getAllTabs: function getAllTabs(callback) {
+      chrome.tabs.query({
+        windowId: windowID
+      }, function (result) {
+        callback(result);
+      });
+    },
+    createTab: function createTab(url) {
+      chrome.tabs.create({
+        windowId: windowID,
+        url: url
       });
     }
   };
