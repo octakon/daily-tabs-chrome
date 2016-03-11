@@ -1,28 +1,25 @@
 'use strict';
-var sites = {};
-var initSites = function() {
-  if(typeof window.localStorage.allDays === 'undefined') {
-    sites.allDays = [];
-  } else {
-    sites.allDays = JSON.parse(window.localStorage.allDays);
-  }
-};
-initSites();
 
 requirejs.config({
   baseUrl: 'scripts.babel'
 });
 
-requirejs(['utils/tabs'], function(tabs) {
+requirejs(['utils/tabs', 'utils/storage'], function(tabs, storage) {
+  storage.initSites();
+
   var btnSaveCurrentTab = $('#save-current-tab');
   var btnSaveAllTabs = $('#save-all-tabs');
   var btnGetSmart = $('#get-smart');
+  var selectPresets = $('#saving-presets');
+
+  var getSelectedPreset = function () {
+    return selectPresets.find('option:selected').val();
+  };
 
   var saveCurrentTab = function() {
     tabs.getCurrentTab(function(tab) {
-      sites.allDays.push(tab.url);
-      window.localStorage.allDays = JSON.stringify(sites.allDays);
-      window.alert(JSON.stringify(sites));
+      storage.setUrlTo(tab.url, getSelectedPreset());
+      window.alert(JSON.stringify(storage.getSites()));
     });
   };
 
@@ -33,19 +30,26 @@ requirejs(['utils/tabs'], function(tabs) {
       var tabsLength = tabs.length;
       for (i; i < tabsLength; i++) {
         var tab = tabs[i];
-        sites.allDays.push(tab.url);
+        storage.setUrlTo(tab.url, getSelectedPreset());
       }
-      window.localStorage.allDays = JSON.stringify(sites.allDays);
-      window.alert(JSON.stringify(sites.allDays));
+      window.alert(JSON.stringify(storage.getSites()));
     });
   };
 
   var openTabs = function() {
-    initSites();
+    var sites = storage.getSites();
+    var todaySites = storage.getTodaySites();
     var i = 0;
-    var numberURLs = sites.allDays.length;
+    var numberURLs = sites.everyDayTabs.length;
     for(i; i < numberURLs; i++) {
-      tabs.createTab(sites.allDays[i]);
+      tabs.createTab(sites.everyDayTabs[i]);
+    }
+    if(!_.isNull(todaySites)) {
+      i=0;
+      numberURLs = todaySites.length;
+      for(i; i < numberURLs; i++) {
+        tabs.createTab(todaySites[i]);
+      }
     }
   };
 

@@ -3,3 +3,13 @@
   min-width: 400px;
   padding: 10px;
 }
+
+label {
+  color: $foreground-color;
+
+  select {
+    color: $foreground-color--dark;
+    margin-bottom: 10px;
+  }
+
+}

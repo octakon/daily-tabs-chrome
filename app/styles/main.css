@@ -3,4 +3,8 @@
   min-width: 400px;
   padding: 10px; }
 
-/*# sourceMappingURL=main.css.map */
+label {
+  color: #fcfcfc; }
+  label select {
+    color: #333;
+    margin-bottom: 10px; }

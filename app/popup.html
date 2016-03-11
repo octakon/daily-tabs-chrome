@@ -4,29 +4,47 @@
     <meta charset="utf-8">
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link href="bower_components/foundation/css/foundation.min.css" rel="stylesheet">
+    <link href="bower_components/foundation/css/normalize.min.css" rel="stylesheet">
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css styles/main.css -->
     <link href="styles/main.css" rel="stylesheet">
     <!-- endbuild -->
-    <link href="bower_components/foundation/css/foundation.min.css" rel="stylesheet">
-    <link href="bower_components/foundation/css/normalize.min.css" rel="stylesheet">
+
 
   </head>
   <body class="smart-news-brunch">
     <div class="row">
       <div class="show-for-small small-12 columns">
-        <a href="#" id="get-smart" class="button expand success">Let's get smart!</a>
+        <button id="get-smart" class="button expand success">Let's get smart!</button>
       </div>
     </div>
     <div class="row">
       <div class="show-for-small small-6 columns">
-        <a href="#" id="save-current-tab" class="button expand secondary">
+        <button id="save-current-tab" class="button expand secondary">
           Save current tab
-        </a>
+        </button>
       </div>
       <div class="show-for-small small-6 columns">
-        <a href="#" id="save-all-tabs" class="button expand secondary">Save all tabs</a>
+        <button id="save-all-tabs" class="button expand secondary">Save all tabs</button>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+      <div class="show-for-small small-12 columns">
+        <label>Presets for opening prefences:
+        <select id="saving-presets">
+          <option value="every">Every Day</option>
+          <option value="sun">Sunday</option>
+          <option value="mon">Monday</option>
+          <option value="tue">Tuesday</option>
+          <option value="wed">Wednesday</option>
+          <option value="thu">Thursday</option>
+          <option value="fri">Friday</option>
+          <option value="sat">Saturday</option>
+        </select>
+      </label>
       </div>
     </div>
 
@@ -39,6 +57,7 @@
     <script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
     <script src="bower_components/foundation/js/foundation.js"></script>
     <script src="bower_components/requirejs/requirejs-bower-2.1.22/require.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js scripts/popup.js -->

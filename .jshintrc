@@ -22,6 +22,7 @@
     "crypto": true,
     "$": false,
     "requirejs": false,
-    "define": false
+    "define": false,
+    "_": false
   }
 }
