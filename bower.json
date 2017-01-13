@@ -1,11 +1,10 @@
 {
-  "name": "smart-news-brunch",
+  "name": "dayli-tabs",
   "private": true,
   "version": "0.0.0",
-  "dependencies": {
-    "foundation": "~5.5.3",
-    "requirejs": "~2.1.20",
-    "underscore": "~1.8.3"
-  },
-  "devDependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
 }

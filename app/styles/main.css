@@ -1,10 +1,3 @@
-.smart-news-brunch {
-  background-color: #343434;
-  min-width: 400px;
-  padding: 10px; }
-
-label {
-  color: #fcfcfc; }
-  label select {
-    color: #333;
-    margin-bottom: 10px; }
+body {
+  padding: 20px;
+}
