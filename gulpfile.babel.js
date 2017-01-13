@@ -89,8 +89,16 @@ gulp.task('babel', () => {
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
+gulp.task('sass', () => {
+  return gulp.src('app/styles/scss/main.scss')
+      .pipe($.sass().on('error',$.sass.logError))
+      .pipe(gulp.dest('app/styles'));
+});
+
 gulp.task('watch', ['lint', 'babel'], () => {
   $.livereload.listen();
+
+  gulp.watch('app/styles/scss/*.scss', ['sass']);
 
   gulp.watch([
     'app/*.html',

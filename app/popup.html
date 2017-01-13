@@ -2,17 +2,53 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="styles/foundation.min.css" rel="stylesheet">
     <!-- build:css styles/popup-vendor.css -->
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:css styles/main.css -->
+      <!-- build:css styles/main.css -->
     <link href="styles/main.css" rel="stylesheet">
     <!-- endbuild -->
   </head>
-  <body>
-    <h1>'Allo, 'Allo!</h1>
+  <body class="dayli-tabs">
+    <div class="row">
+      <div class="show-for-small small-12 columns">
+        <button id="open-tabs" class="button expand success">Load Tabs</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="show-for-small small-6 columns">
+        <button id="save-current-tab" class="button expand secondary">
+          Save active tab
+        </button>
+      </div>
+      <div class="show-for-small small-6 columns">
+        <button id="save-all-tabs" class="button expand secondary">Save all tabs</button>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+      <div class="show-for-small small-12 columns">
+        <label>Presets for opening prefences:
+        <select id="saving-presets">
+          <option value="every">Every Day</option>
+          <option value="sun">Sunday</option>
+          <option value="mon">Monday</option>
+          <option value="tue">Tuesday</option>
+          <option value="wed">Wednesday</option>
+          <option value="thu">Thursday</option>
+          <option value="fri">Friday</option>
+          <option value="sat">Saturday</option>
+        </select>
+      </label>
+      </div>
+    </div>
 
+
+    <script src="scripts/libs/underscore-min.js"></script>
+    <script src="scripts/libs/require.js"></script>
+    <script src="scripts/libs/jquery-3.1.1.min.js"></script>
     <!-- build:js scripts/popup-vendor.js -->
     <!-- bower:js -->
     <!-- endbower -->
