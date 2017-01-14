@@ -19,7 +19,6 @@ requirejs(['utils/tabs', 'utils/storage'], function(tabs, storage) {
   var saveCurrentTab = function() {
     tabs.getCurrentTab(function(tab) {
       storage.setUrlTo(tab.url, getSelectedPreset());
-      window.alert(JSON.stringify(storage.getSites()));
     });
   };
 
@@ -32,7 +31,6 @@ requirejs(['utils/tabs', 'utils/storage'], function(tabs, storage) {
         var tab = tabs[i];
         storage.setUrlTo(tab.url, getSelectedPreset());
       }
-      window.alert(JSON.stringify(storage.getSites()));
     });
   };
 
