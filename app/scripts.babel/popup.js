@@ -1,7 +1,7 @@
 'use strict';
 
 requirejs.config({
-  baseUrl: 'scripts.babel'
+  baseUrl: 'scripts'
 });
 
 requirejs(['utils/tabs', 'utils/storage'], function(tabs, storage) {
