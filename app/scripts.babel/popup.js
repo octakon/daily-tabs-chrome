@@ -13,7 +13,7 @@ requirejs(['utils/tabs', 'utils/storage'], function (tabs, storage) {
     var selectPresets = $('#saving-presets');
 
     var getSelectedPreset = function () {
-        return selectPresets.find('option:selected').val();
+        return parseInt(selectPresets.find('option:selected').val());
     };
 
     var saveCurrentTab = function () {
