@@ -47,37 +47,37 @@ define(function () {
         },
 
         setUrlTo: function (url, preset) {
-            var wStorage = window.localStorage;
+            let wStorage = window.localStorage;
             switch (preset) {
-                case 'every':
+                case this.days.EVERY:
                     sites.everyDayTabs.push(url);
                     break;
 
-                case 'sun':
+                case this.days.SUN:
                     sites.sundayTabs.push(url);
                     break;
 
-                case 'mon':
+                case this.days.MON:
                     sites.mondayTabs.push(url);
                     break;
 
-                case 'tue':
+                case this.days.TUE:
                     sites.tuesdayTabs.push(url);
                     break;
 
-                case 'wed':
+                case this.days.WED:
                     sites.wednesdayTabs.push(url);
                     break;
 
-                case 'thu':
+                case this.days.THU:
                     sites.thursdayTabs.push(url);
                     break;
 
-                case 'fri':
+                case this.days.FRI:
                     sites.fridayTabs.push(url);
                     break;
 
-                case 'sat':
+                case this.days.SAT:
                     sites.saturdayTabs.push(url);
                     break;
             }
