@@ -2,6 +2,8 @@
 <html>
   <head>
     <!-- build:css styles/options-vendor.css -->
+    <link href="styles/foundation.min.css" rel="stylesheet">
+
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
@@ -9,10 +11,24 @@
     <link href="styles/main.css" rel="stylesheet">
     <!-- endbuild -->
   </head>
-  <body>
-    <h1>'Allo, 'Allo!</h1>
+  <body class="dayli-tabs-options">
+    <h1>Manage saved Sites</h1>
+    <div id="no-sites" class="callout hide">
+      <h5>No Sites saved!</h5>
+      <p>I haven't found any Sites in the Storage.</p>
+    </div>
+    <table id="saved-sites" class="hide">
+      <tr>
+        <th>Site</th>
+        <th>Preset</th>
+        <th>Delete</th>
+      </tr>
+    </table>
 
     <!-- build:js scripts/options-vendor.js -->
+    <script src="scripts/libs/underscore-min.js"></script>
+    <script src="scripts/libs/require.js"></script>
+    <script src="scripts/libs/jquery-3.1.1.min.js"></script>
     <!-- bower:js -->
     <!-- endbower -->
     <!-- endbuild -->

@@ -1,15 +1,17 @@
 define(function () {
     var sites = {};
-    var days = {
-        SUN: 0,
-        MON: 1,
-        TUE: 2,
-        WED: 3,
-        THU: 4,
-        FRI: 5,
-        SAT: 6
-    };
     var storage = {
+        days: {
+            SUN: 0,
+            MON: 1,
+            TUE: 2,
+            WED: 3,
+            THU: 4,
+            FRI: 5,
+            SAT: 6,
+            EVERY: 99
+        },
+
         initSites: function () {
             var storedSites = window.localStorage.sites;
             if (!_.isUndefined(storedSites)) {
@@ -89,25 +91,25 @@ define(function () {
         getTodaySites: function () {
             var today = new Date().getDay();
             switch (today) {
-                case days.SUN:
+                case this.days.SUN:
                     return sites.sundayTabs;
 
-                case days.MON:
+                case this.days.MON:
                     return sites.mondayTabs;
 
-                case days.TUE:
+                case this.days.TUE:
                     return sites.tuesdayTabs;
 
-                case days.WED:
+                case this.days.WED:
                     return sites.wednesdayTabs;
 
-                case days.THU:
+                case this.days.THU:
                     return sites.thursdayTabs;
 
-                case days.FRI:
+                case this.days.FRI:
                     return sites.fridayTabs;
 
-                case days.SAT:
+                case this.days.SAT:
                     return sites.saturdayTabs;
 
                 default:
@@ -120,6 +122,40 @@ define(function () {
             let todaySites = this.getTodaySites();
             let numberEverydaySites = sites.everyDayTabs.length;
             return numberEverydaySites !== 0 || (todaySites !== null && todaySites.length !== 0 );
+        },
+
+        removeSite: function (preset, index) {
+            let wStorage = window.localStorage;
+            let sites = this.getSites();
+            switch(preset) {
+                case this.days.EVERY:
+                    sites.everyDayTabs.splice(index, 1);
+                    break;
+                case this.days.MON:
+                    sites.mondayTabs.splice(index, 1);
+                    break;
+                case this.days.TUE:
+                    sites.tuesdayTabs.splice(index, 1);
+                    break;
+                case this.days.WED:
+                    sites.wednesdayTabs.splice(index, 1);
+                    break;
+                case this.days.THU:
+                    sites.thursdayTabs.splice(index, 1);
+                    break;
+                case this.days.FRI:
+                    sites.fridayTabs.splice(index, 1);
+                    break;
+                case this.days.SAT:
+                    sites.saturdayTabs.splice(index, 1);
+                    break;
+                case this.days.SUN:
+                    sites.sundayTabs.splice(index, 1);
+                    break;
+                default:
+                    return false;
+            }
+            wStorage.sites = JSON.stringify(sites);
         }
 
     };
