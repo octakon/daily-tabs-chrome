@@ -128,7 +128,7 @@ gulp.task('wiredep', () => {
 gulp.task('package', function () {
     var manifest = require('./dist/manifest.json');
     return gulp.src('dist/**')
-        .pipe($.zip('dayli tabs-' + manifest.version + '.zip'))
+        .pipe($.zip('daily tabs-' + manifest.version + '.zip'))
         .pipe(gulp.dest('package'));
 });
 

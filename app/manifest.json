@@ -4,8 +4,8 @@
   "manifest_version": 2,
   "description": "__MSG_appDescription__",
   "icons": {
-    "16": "images/dayli-tabs_logo_16.png",
-    "128": "images/dayli-tabs_logo_128.png"
+    "16": "images/daily-tabs_logo_16.png",
+    "128": "images/daily-tabs_logo_128.png"
   },
   "default_locale": "en",
   "background": {
@@ -24,10 +24,10 @@
   },
   "browser_action": {
     "default_icon": {
-      "19": "images/dayli-tabs_logo_19.png",
-      "38": "images/dayli-tabs_logo_38.png"
+      "19": "images/daily-tabs_logo_19.png",
+      "38": "images/daily-tabs_logo_38.png"
     },
-    "default_title": "dayli tabs",
+    "default_title": "daily tabs",
     "default_popup": "popup.html"
   }
 }
