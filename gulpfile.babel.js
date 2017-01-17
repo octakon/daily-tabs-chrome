@@ -29,7 +29,7 @@ function lint(files, options) {
     };
 }
 
-gulp.task('lint', lint('app/scripts.babel/**/*.js', {
+gulp.task('lint', lint(['app/scripts.babel/**/*.js', '!app/scripts.babel/libs/*.js'], {
     env: {
         es6: true
     }
@@ -81,7 +81,7 @@ gulp.task('chromeManifest', () => {
 });
 
 gulp.task('babel', () => {
-    return gulp.src('app/scripts.babel/**/*.js')
+    return gulp.src(['app/scripts.babel/**/*.js', '!app/scripts.babel/libs/*.js'])
         .pipe($.babel({
             presets: ['es2015']
         }))
@@ -109,7 +109,7 @@ gulp.task('watch', ['lint', 'babel'], () => {
         'app/_locales/**/*.json'
     ]).on('change', $.livereload.reload);
 
-    gulp.watch('app/scripts.babel/**/*.js', ['lint', 'babel']);
+    gulp.watch(['app/scripts.babel/**/*.js', '!app/scripts.babel/libs/*.js'], ['lint', 'babel']);
     gulp.watch('bower.json', ['wiredep']);
 });
 
